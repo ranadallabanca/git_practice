@@ -1,13 +1,19 @@
+require "colorize"
 class Menu
   def initialize(menu)
     @menu = menu
+    @color_scheme = { color: :light_cyan, background: :default }
   end
 
   # def print method
   def print
 
     # display menu message
-    puts @menu[:message]
+    # replaces chars and spaces with *
+    border = @menu[:message].gsub(/\s|\S/, '*')
+    puts border.colorize(@color_scheme)
+    puts @menu[:message].colorize(@color_scheme)
+    puts border.colorize(@color_scheme)
       
     @menu[:options].each_with_index do |item, index|
       puts "#{index + 1}) #{item}"
