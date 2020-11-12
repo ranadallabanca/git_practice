@@ -18,10 +18,13 @@ require_relative 'menu.rb'
 menu_test = Menu.new(default_menu_hash)
 
 casino_menu = Menu.new(menu3)
-casino_menu.print
-
 menu_test.print
-puts menu_test.class
+puts "SELECTION FROM APP #{menu_test.get_selection}"
+casino_menu.print
+selection2 = casino_menu.get_selection
+puts selection2
+# casino_menu.print
+# puts menu_test.class
 
 
 
